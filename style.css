@@ -916,9 +916,10 @@ width: 40%;
 grid-column: span 6;
 
 }
-.right-section-cv{
+.right-section-cv .right-main-content{
 grid-column: span 6;
-display: none;
+overflow: hidden;
+/* display: none; */
 }
 
 }
