@@ -697,9 +697,10 @@ color: #e98a0e;
     display: grid;
     
     grid-column: span 8;
-    background-color: #f7f7f7;
+   /*  background-color: #f7f7f7; */
    /*  height: 80vh; */
     width: 100%;
+    background-color: white;
     
 }
 .left-content-cv{
@@ -920,6 +921,7 @@ grid-column: span 6;
 grid-column: span 6;
 overflow: hidden;
 /* display: none; */
+background-color: white;
 }
 
 }
