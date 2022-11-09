@@ -827,7 +827,8 @@ padding: .3rem 0;
     color:#2D9CDB;
 }
 .right-main-content{
-    padding: 2rem 3rem;
+    padding: 0.5rem 0.5rem; 
+    width: 100%
 }
 .right-title{
     letter-spacing: 1px;
