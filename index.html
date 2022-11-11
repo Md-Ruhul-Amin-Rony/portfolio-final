@@ -13,6 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    <Script src="jsonData.js"></Script>
     <title>Personal Portfolio Website</title>
 
 </head>
@@ -110,88 +111,68 @@
         
     </section>
 
-    <!-- skills section start -->
+    <!-- Resume section start -->
     <section class="resume" id="resume">
         
         <div class="main-content-cv">
             <section class="left-section-cv">
                 <div class="left-content-cv">
                 <div class="profile-cv">
-                    <img src="images/pic-final.png" alt="">
-                    <h2 class="name-cv">Md Ruhul Amin</h2>
-                    <p class="carrer">Fullstack Developer (.Net)</p>
+                    <script>
+                        document.write("<img src="+jsonData.basics.image+" alt=''>");
+                    </script>
+                    
+                    <h2 class="name-cv"><script>document.write(jsonData.basics.name)</script></h2>
+                    <p class="carrer"><script>document.write(jsonData.basics.label)</script></p>
                 </div>
                 <div class="contact-info-cv">
-                    <h3 class="main-title-cv">Contact Info</h3>
+                    <h3 class="main-title-cv"><script>document.write(jsonData.basics.ci)</script></h3>
                     <ul>
                         <li>
                             <i class="fa fa-phone"></i>
-                            0046723980098
+                            <script>document.write(jsonData.basics.phone)</script>
                         </li>
                         <li>
                             <i class="fa fa-fax"></i>
-                            mdruhul.amin@chasacademy.se </li>
+                            <script>document.write(jsonData.basics.email1)</script></li>
                             <li>
                             <i class="fa fa-fax"></i>
-                            adiar1234@yahoo.com
+                            <script>document.write(jsonData.basics.email2)</script>
                         </li>
                         <li>
                             <i class="fa fa-globe"></i>
-                            www.loremipsum.com
+                            <script>document.write(jsonData.basics.url)</script>
                         </li> 
                         <li>
                             <i class="fa fa-facebook"></i>
-                            https://www.facebook.com/adiar.h.adi
+                            <script>document.write(jsonData.basics.fb)</script>
                         </li>
                         <li>
                             <i class="fa fa-linkedin-square"></i>
-                            https://www.linkedin.com/in/md-ruhul-amin-104140128/
+                            <script>document.write(jsonData.basics.lid)</script>
                         </li>
                         <li>
                             <i class="fa fa-github"></i>
-                            https://github.com/Md-Ruhul-Amin-Rony
+                            <script>document.write(jsonData.basics.gih)</script>
                         </li>
                         <li>
                             <i class="fa fa-map-marker"></i>
-                            Solhagavägen 30, 14331 Vårby
+                            <script>document.write(jsonData.basics.ads)</script>
                         </li>
                     </ul>
                 </div>
                 
                 <div class="references-section">
                     <h3 class="main-title">References</h3>
-                    <div class="referee">
-                        <h6 class="sub-title">Mimie Buskas</h6>
-                        <p class="sub-para">Product Manager</p>
-                    <ul>
-                        <li>
-                            <i class="fa fa-phone"></i>
-                            0702175446
-                        </li>
-                        <li>
-                            <i class="fa fa-fax"></i>
-                            mimie.buskas@gmail.com
-                        </li>
-
-                        
-                    </ul>
-                    </div>
-                    <div class="referee">
-                        <h6 class="sub-title">Stefan Berquivist</h6>
-                        <p class="sub-para">Staion's Manager</p>
-                    <ul>
-                        <li>
-                            <i class="fa fa-phone"></i>
-                            0702175446
-                        </li>
-                        <li>
-                            <i class="fa fa-fax"></i>
-                            stefan.berquivist@hetz.se.com
-                        </li>
-
-                        
-                    </ul>
-                    </div>
+                    <script>
+                        let refLength= jsonData.References.length;
+                        let l;
+                        for(l=0;l<refLength; l++){
+                            document.write("<div class='referee'><h6 class='sub-title'>"+jsonData.References[l].name+"</h6><p class='sub-para'>"+jsonData.References[l].position+"</p><ul><li><i class='fa fa-phone'></i>"+jsonData.References[l].Mobil+"</li><li><i class='fa fa-fax'></i>"+jsonData.References[l].email+"</li></ul></div>");
+                        }
+                    </script>
+                    
+            
 
                 </div>
             </div> 
@@ -199,190 +180,51 @@
             <section class="right-section-cv">
             <div class="right-main-content">
                 <section class="about sect">
-                    <h2 class="right-title">About Me</h2>
-                <p class="para">Som person är jag flexibel, social och alltid nyfiken och öppen för nya möjligheter. Jag har lätt för att 
-                    samarbeta och under tidigare anställningar har jag alltid fått bra feedback från chefer och kollegor.
-                    Som person jag är flexibel, social, nyfiken och öppen för nya 
-                    möjligheter. Jag har ett positivt 
-                    förhållningssätt i samarbetet med 
-                    andra människor. Under min 
-                    tidigare arbetsplats fick jag väldigt 
-                    bra feedback från min chef samt
-                    mina kollegor. Jag har lärt mig
-                    förhandlingsteknik och älskar att 
-                    ta nya utmaningar som behövs 
-                    arbeta inom Tull-branschen.
+                    <h2 class="right-title"><script>document.write(jsonData.basics.am)</script></h2>
+                <p class="para"><script>document.write(jsonData.basics.para)</script>
                     <br>
                     
                 </p>
                 </section>
                 
                 <section class="experience sect">
-                    <h2 class="right-title">EXPERIENCE</h2>
-                    <div class="timeline">
-                        <div class="left-tl-content">
-                            <h5 class="tl-title">Tornado AB</h5>
-                            <p class="para">2010 - 2016</p>
-
-                        </div>
-                        <div class="right-tl-content">
-                            <div class="tl-content">
-                                <h5 class="tl-title-2">Andra Assistant</h5>
-                                <p class="para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque, vero 
-                                    vitae nulla voluptatibus perspiciatis quo voluptates voluptate id asperiores
-                                    sit!</p>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="timeline">
-                        <div class="left-tl-content">
-                            <h5 class="tl-title">Egen Företagare</h5>
-                            <p class="para">2015 - 2019</p>
-
-                        </div>
-                        <div class="right-tl-content">
-                            <div class="tl-content">
-                                <h5 class="tl-title-2">Director</h5>
-                                <p class="para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque, vero 
-                                    vitae nulla voluptatibus perspiciatis quo voluptates voluptate id asperiores
-                                    sit!</p>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="timeline">
-                        <div class="left-tl-content">
-                            <h5 class="tl-title">KGH CUSTOMS</h5>
-                            <p class="para">2020 - 2021</p>
-
-                        </div>
-                        <div class="right-tl-content">
-                            <div class="tl-content">
-                                <h5 class="tl-title-2">Customs Consultant</h5>
-                                <p class="para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque, vero 
-                                    vitae nulla voluptatibus perspiciatis quo voluptates voluptate id asperiores
-                                    sit!</p>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="timeline">
-                        <div class="left-tl-content">
-                            <h5 class="tl-title">Hertz</h5>
-                            <p class="para">2018 - Present</p>
-
-                        </div>
-                        <div class="right-tl-content">
-                            <div class="tl-content">
-                                <h5 class="tl-title-2">Customer sales representative</h5>
-                                <p class="para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque, vero 
-                                    vitae nulla voluptatibus perspiciatis quo voluptates voluptate id asperiores
-                                    sit!</p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                
+                    <h2 class="right-title">experience</h2>
+                    <script>
+                                
+                        let expLength= jsonData.work.length;
+                        let j;
+                        for(j=0;j<expLength; j++){
+                            document.write("<div class='timeline'><div class='left-tl-content'><h5 class='tl-title'>"+jsonData.work[j].name+"</h5><p class='para'>"+jsonData.work[j].startDate+" - "+jsonData.work[j].endDate+"</p></div><div class='right-tl-content'><div class='tl-content'><h5 class='tl-title-2'>"+jsonData.work[j].position+"</h5><p class='para'>"+jsonData.work[j].summary+"</p> </div> </div></div>");
+                        }
+                    </script>                                    
                 </section>
                 <section class="Education">
                     <h2 class="right-title">EDUCATION</h2>
-                    <div class="timeline">
-                        <div class="left-tl-content">
-                            <h5 class="tl-title">Chas Academy</h5>
-                            <p class="para">2022 - 2024</p>
-
-                        </div>
-                        <div class="right-tl-content">
-                            <div class="tl-content">
-                                <h5 class="tl-title-2">.NET fullstack developer</h5>
-                                <p class="para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque, vero 
-                                    vitae nulla voluptatibus perspiciatis quo voluptates voluptate id asperiores
-                                    sit!</p>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="timeline">
-                        <div class="left-tl-content">
-                            <h5 class="tl-title">TUc yrkeshögskola</h5>
-                            <p class="para">2020 - 2022</p>
-
-                        </div>
-                        <div class="right-tl-content">
-                            <div class="tl-content">
-                                <h5 class="tl-title-2">Customs Complaince specialist</h5>
-                                <p class="para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque, vero 
-                                    vitae nulla voluptatibus perspiciatis quo voluptates voluptate id asperiores
-                                    sit!</p>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="timeline">
-                        <div class="left-tl-content">
-                            <h5 class="tl-title">North South university</h5>
-                            <p class="para">2006 - 2009</p>
-
-                        </div>
-                        <div class="right-tl-content">
-                            <div class="tl-content">
-                                <h5 class="tl-title-2">computer science & engineering</h5>
-                                <p class="para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque, vero 
-                                    vitae nulla voluptatibus perspiciatis quo voluptates voluptate id asperiores
-                                    sit!</p>
-                            </div>
-                        </div>
-
-                    </div>
-
+                    <script>
+                        let eduLength= jsonData.education.length;
+                        let i;
+                        for(i=0;i<eduLength; i++){
+                            document.write("<div class='timeline'><div class='left-tl-content'> <h5 class='tl-title'>"+jsonData.education[i].institution+"</h5><p class='para'>"+jsonData.education[i].startDate+" - "+jsonData.education[i].endDate+"</p></div><div class='right-tl-content'><div class='tl-content'><h5 class='tl-title-2'>"+jsonData.education[i].area+"</h5><p class='para'>"+jsonData.education[i].description+"</p> </div></div></div>");
+                        }
+                    </script>                    
                 </section>
                 <section class="awards sect">
                     <h2 class="right-title">awards</h2>
-                    <div class="timeline">
-                        <div class="left-tl-content">
-                            <h5 class="tl-title">North south university</h5>
-                            <p class="para">2006 - 2009</p>
-
-                        </div>
-                        <div class="right-tl-content">
-                            <div class="tl-content">
-                                <h5 class="tl-title-2">50% Tution waiver</h5>
-                                <p class="para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque, vero 
-                                    vitae nulla voluptatibus perspiciatis quo voluptates voluptate id asperiores
-                                    sit!</p>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="timeline">
-                        <div class="left-tl-content">
-                            <h5 class="tl-title">Tornado ab</h5>
-                            <p class="para">2010 - 2011</p>
-
-                        </div>
-                        <div class="right-tl-content">
-                            <div class="tl-content">
-                                <h5 class="tl-title-2">Best employee</h5>
-                                <p class="para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque, vero 
-                                    vitae nulla voluptatibus perspiciatis quo voluptates voluptate id asperiores
-                                    sit!</p>
-                            </div>
-                        </div>
-
-                    </div>
-
+                    <script>
+                        let awrdLength= jsonData.awards.length;
+                        let k;
+                        for(k=0;k<awrdLength; k++){
+                            document.write("<div class='timeline'><div class='left-tl-content'> <h5 class='tl-title'>"+jsonData.awards[k].awarder+"</h5> <p class='para'>"+jsonData.awards[k].date+"</p> </div> <div class='right-tl-content'> <div class='tl-content'> <h5 class='tl-title-2'>"+jsonData.awards[k].title+"</h5> <p class='para'>"+jsonData.awards[k].summary+"</p> </div> </div></div>");
+                        }
+                    </script>
                 </section>
-
-
-
             </div>
             </section>
         </div>
     </section>
 
-    <!-- teams section start -->
+
+    <!-- Portfolio section start -->
     <section class="teams" id="teams">
         <div class="container-portfolio">
             <div class="portfolio-content">
